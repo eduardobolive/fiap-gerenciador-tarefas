@@ -1,11 +1,17 @@
+import { Login } from "../containers/Login";
+import { Home } from "../containers/Home";
+import { useState, useEffect } from "react";
 
-import { Login } from '../containers/Login'
+export default function Index() {
 
+  const [token, setToken] = useState<string | null>('');
 
-export default function Home() {
-  return (
-    <>
-      <Login />
-    </>
-  )
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      const at = localStorage.getItem('accessToken');
+      setToken(at);
+    }
+  }, []);
+
+  return token ? <Home setToken={setToken}/> : <Login setToken={setToken}/>;
 }
