@@ -81,6 +81,12 @@ input, select {
     font-weight: bold;
 }
 
+.success{
+    text-align: center;
+    color: $secondaryColor;
+    font-weight: bold;
+}
+
 @import './login.scss';
 @import './header.scss';
 @import './footer.scss';
