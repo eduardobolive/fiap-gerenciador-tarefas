@@ -62,6 +62,24 @@ input, select {
     }
 }
 
+input[type="date"]::before {
+    content: attr(placeholder);
+    position: absolute;
+    color: $secondaryColor;
+}
+
+input[type="date"]:focus::before, input[type="date"]:valid::before {
+    content: "";
+}
+
+input[type="date"] {
+    color: #ffffff;
+}
+
+input[type="date"]:focus, input[type="date"]:valid {
+    color: $primaryColor;
+}
+
 @media screen and (min-width: $mediaQueryDesktop) {
     input, select {
         border-radius: 8px;
