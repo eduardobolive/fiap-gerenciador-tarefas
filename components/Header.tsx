@@ -14,7 +14,7 @@ export const Header : NextPage<HeaderProps> = ({sair, showModal}) => {
             <img src="/logo.svg" alt="Logo Fiap" className="logo"/>
             <button onClick={showModal}><span>+</span>Adicionar Tarefa</button>
             <div className="mobile">
-                <span>Olá, </span>
+                <span>Olá, {name}</span>
                 <img src="/exit-mobile.svg" alt="Sair" onClick={sair}/>
             </div>
             <div className="desktop">
