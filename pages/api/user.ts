@@ -36,7 +36,7 @@ const endpoint = async function(
         }
 
         if(!user.password || user.password.length < 6){
-            return res.status(400).json({error: 'Senha não é válido'});
+            return res.status(400).json({error: 'Senha menor que 6 caracteres'});
         }
 
         const existsWithSameEmail = await UserModel.find({email: user.email});
